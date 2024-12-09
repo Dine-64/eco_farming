@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Farming</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9ade7d; /* Light earth tone background */
+            background-image:url(pw8.webp);
+            background-size:cover;
+            color: #333; /* Darker text for better readability */
+        } 
+        .nav {
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+
+        .search-container form {
+            display: flex;
+        }
+
+        .search-container input[type="text"] {
+            padding: 6px;
+            margin-right: 4px;
+            border: none;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button {
+            padding: 6px;
+            background: #4CAF50; /* Adjust to match your design */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button:hover {
+            background: #45a049;
+        }
+
+        /* Adjustments for existing .nav a styles might be needed */
+
+        
+        .searchbar form {
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 25px;
+            border: 4px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .searchbar input[type="search"] {
+            width: 0;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            transition: width 0.3s ease;
+        }
+
+        .searchbar button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+        }
+
+        .searchbar form:hover {
+            width: 300px;
+        }
+
+        .searchbar form:hover input[type="search"] {
+            width: calc(100% - 40px);
+        }
+
+        .fa-search {
+            color: #07051a;
+            font-size: 18px;
+        }
+        .header, .footer {
+            background-color: #169f34; /* Soft green, resembling crops */
+            background-image: url(pb.jpg);
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            color: #0d0101; /* White text for contrast */
+        }
+
+        .header h1{
+            font-size: 50px;
+            color: #011706;
+        }
+        .header p{
+            font-size: 20px;
+            color: #011706;
+        }
+        .nav {
+            background: #62d062; /* Deeper green, simulating foliage */
+            box-shadow: 0 5px 10px #727570;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #499a56; /* A lighter green for hover effect */
+            color: black;
+        }
+        .main {
+            padding: 20px;
+            color: #333; /* Ensure text is readable on the potential image background */
+            animation: fadeIn 2s ease-out;
+            /* Retain your existing .main styles */
+        }
+        .container {
+            display: flex;
+            align-items: center; /* Vertically align items */
+        }
+
+        .image {
+            margin-left: 20px; /* Adjust margin as needed */
+        }
+
+        .text {
+            flex: 1; /* Take up remaining space */
+        }
+
+        .container2{
+          padding-left: 6%;
+            padding-right: 8%;
+            padding-top: 0;
+            padding-bottom: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+}
+
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .content {
+            width: 90%; /* Adjust based on preference */
+            max-width: 800px; /* Maximum width of the content */
+            margin: 20px auto; /* Centers the container */
+            padding: 20px;
+            background-color: rgb(219, 236, 204); /* Background color for content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better contrast */
+        }
+
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .container2 section {
+            flex: 1 1 200px; /* Grow, Shrink, Basis */
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .container2 section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .container2 section a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 15px;
+        }
+
+        .container2 img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #eee;
+            transition: transform 0.5s ease;
+            animation: pulse 5s infinite;
+        }
+
+        .container2 section:hover img {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+        }
+        /* Adjustments for hover effects to integrate with new animations */
+        .container2 section:hover img {
+            transform: scale(1.05) !important; /* Override pulse effect on hover */
+        }
+
+        /* Ensure existing styles are retained and integrated with new animations */
+        /* Add or modify existing styles here, ensuring they complement the animations */
+       
+        .div1 h2{
+            margin-bottom: 0%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .search-bar {
+            float: left;
+            padding: 10px;
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */}
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Product</h1>
+        <p>Fresh products from us to you</p>
+    </div>
+    <div class="nav">
+        <!-- Search bar added at the beginning of the nav -->
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+        <a href="file:///D:/web/Home%20Page/home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="file:///D:/web/Product%20Page/product.html">Product</a></button>
+            <div class="dropdown-content">
+                <a href="#organic-fruits-vegetables">Organic Fruits and Vegetables</a>
+                <a href="#grains-legumes">Grains and Legumes</a>
+                <a href="#herbs-plants">Herbs and Medicinal Plants</a>
+                <a href="#honey-products">Honey and Bee Products</a>
+                <a href="#natural-fibers">Natural Fibers</a>
+                <a href="#beauty-care-products">Natural Beauty and Personal Care Products</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn"><a href="file:///D:/web/About%20Us%20Page/about%20us.html">About Us</a></button>
+            <div class="dropdown-content">
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#our-mission">Our Mission</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#our-vision">Our Vision</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#commitment-agriculture">Commitment to Sustainable Agriculture for Eco Farming</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#join-us">Why Join Us in Making a Sustainable Future?</a>
+            </div>
+        </div>
+        <a href="file:///D:/web/Contact%20Page/contactpage.html">Contact Us</a>
+    </div>
+    <div class="main">
+        <P>Eco farming products are designed with sustainability at their core, supporting eco-friendly agriculture practices that have minimal environmental impact and promote responsible resource management. Our range includes organic produce grown without synthetic inputs, enhancing soil health and biodiversity; biodynamic products that treat the farm as a holistic ecosystem; eco-labeled meats from free-range animals raised on natural feed without antibiotics or hormones; heritage and heirloom seeds that maintain agricultural diversity; natural pesticides and fertilizers that enrich the soil without harmful chemicals; and eco-friendly farming tools and equipment, such as solar-powered irrigation systems. Each product category reflects our commitment to environmental stewardship and offers consumers a way to support sustainable practices that contribute to the health of our planet.</P>
+        <h2 id="organic-fruits-vegetables">Organic Fruits and Vegetables</h2>
+        <p>Organic fruits and vegetables are essential components of eco farming products, adhering to stringent standards that prioritize environmental sustainability and consumer health. These crops are grown without synthetic pesticides, herbicides, or fertilizers, relying instead on natural methods such as crop rotation, green manures, and biological pest control to maintain soil health and plant vigor. This approach ensures that the produce is not only safe and nutritious but also contributes to the preservation of local ecosystems and biodiversity. Consumers choosing organic fruits and vegetables from eco farms support practices that reduce pollution and water use, enhance soil fertility, and mitigate climate change, making a significant positive impact on the environment. By integrating these organic products into our diets, consumers can enjoy fresher, tastier, and more nutritious food while also supporting the long-term health of the planet.</p>
+        <p><b>You can get fresh quality vegetables and fruits from us at any time.</p></b><br>
+        <div class="image">
+            <img src="ofav1.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="ofav2.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="ofav3.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="ofav4.jpeg" alt="Image Description" style="width: 400px; height: 200px;">
+        </div>
+        <h2 id="grains-legumes">Grains and Legumes</h2>
+        <p>Grains and legumes are pivotal in the lineup of eco farming products, offering sustainable and nutritious options that contribute significantly to both ecological and human health. Cultivated under eco-friendly practices, these crops are grown without synthetic pesticides or fertilizers, using techniques that preserve soil integrity, conserve water, and enhance biodiversity.</p>
+        <br>
+        <p><b>Grains</b>such as quinoa, barley, oats, and wheat are selected for their low impact on the environment and their ability to thrive in diverse climatic conditions. These grains are often rotated with other crops to maintain soil fertility and prevent the spread of disease, ensuring a sustainable farming model. They provide essential nutrients and fibers, making them foundational to a healthy diet.</p>
+        <div class="image">
+            <img src="g5.webp" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="g2.webp" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="g3.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="g4.jpg" alt="Image Description" style="width: 400px; height: 200px;">
+        </div>
+        <br>
+        <p><b>Legumes,</b>including lentils, chickpeas, beans, and peas, are especially valued in eco farming for their natural ability to fix nitrogen in the soil, reducing the need for chemical fertilizers. This characteristic makes legumes environmentally beneficial and economically advantageous for farmers. Rich in protein, fiber, and vitamins, legumes offer a sustainable protein source that can substitute for more resource-intensive animal proteins.</p>
+        <div class="image">
+            <img src="l1.jpeg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="l2.png" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="l3.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="l4.webp" alt="Image Description" style="width: 400px; height: 200px;">
+        </div>
+        <br>
+        <p>Together, eco-friendly grains and legumes form a robust category within eco farming products, supporting crop diversity and providing consumers with healthful, sustainable food choices that align with ethical and environmental values. By incorporating these into their offerings, eco farms not only contribute to a more sustainable agricultural system but also offer products that meet the growing consumer demand for environmentally responsible and health-promoting foods.</p>
+        <h2 id="herbs-plants">Herbs and Medicinal Plants</h2>
+        <p>Herbs and medicinal plants are an integral part of eco farming products, celebrated for their therapeutic properties and minimal environmental footprint. These plants are cultivated using sustainable agricultural methods that emphasize the health of both the ecosystem and the consumer.</p>
+        <br>
+        <p><b>Herbs</b> such as basil, mint, rosemary, and thyme are grown without synthetic chemicals, relying instead on organic practices that promote soil fertility and pest resistance naturally. These herbs not only add flavor to a variety of dishes but also offer significant health benefits, including anti-inflammatory and antioxidant properties. Eco farming ensures these herbs are cultivated in a way that maximizes their potency and flavor while preserving natural resources.</p>
+        <p><b>Medicinal plants,</b> including echinacea, lavender, and chamomile, are also key offerings in eco farming. These plants have been used for centuries in traditional medicine and are now recognized for their roles in holistic health practices. Grown organically, these medicinal plants are free from harmful pesticides and chemicals, ensuring that they retain their therapeutic qualities. By employing crop rotation, natural pest control, and biodiversity enhancement, eco farms help maintain the natural habitat, promoting a balanced ecosystem.</p>
+        <div class="image">
+            <img src="h1.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="h2.webp" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="h3.png" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="h4.jpg" alt="Image Description" style="width: 400px; height: 200px;">
+        </div>
+        <br>
+        <p>Cultivating herbs and medicinal plants under eco farming practices not only supports the conservation of biodiversity but also provides a sustainable source of health-promoting plants. Consumers who choose these products contribute to a farming approach that reduces chemical use, conserves water, and promotes soil health, aligning with a lifestyle that values both personal and planetary well-being.</p>
+        <h2 id="honey-products">Honey and Bee Products</h2>
+        <p>Honey and bee products are exceptional additions to the range of eco farming products, embodying the principles of sustainability and natural production. Bees play a crucial role in the ecosystem as pollinators, and their products, including honey, beeswax, propolis, and royal jelly, offer various health benefits and environmental advantages when harvested responsibly.</p>
+        <br>
+        <p><b>Honey</b> is perhaps the most well-known bee product, valued not only for its natural sweetness but also for its antibacterial properties and rich nutritional profile. Eco farming practices ensure that honey is harvested from bees that forage in environments free from synthetic chemicals and pesticides, thereby maintaining the purity and quality of the honey. Sustainable beekeeping emphasizes the health of the bee colonies, which involves maintaining natural habitats and using practices that do not overexploit the bees or their ecosystem.</p>
+        <p><b>Beeswax, </b>another valuable product, is used in natural cosmetics, candles, and as a food wrap, providing a sustainable alternative to synthetic materials. Beeswax production in eco farming is managed to ensure that extraction doesn’t harm the bees, and that the wax is processed minimally, retaining its natural properties.</p>
+        <p><b>Propolis,</b> collected by bees from tree buds, is used for its healing properties, particularly in boosting the immune system and treating various ailments. It is harvested in a way that supports bee health and hive sustainability.</p>
+        <p><b>Royal jelly,</b> a secretion used to nourish queen bees and young larvae, is harvested for its health-promoting features, including anti-inflammatory and antioxidant effects. Like other bee products, it is collected with practices that prioritize the well-being of the bees and the environment.</p>
+       <br>
+    <div class="image">
+        <img src="honey.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+        <img src="Beeswax.webp" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+        <img src="Propolis.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+        <img src="Royal jelly.webp" alt="Image Description" style="width: 400px; height: 200px;">
+    </div>
+        <br>
+        <p>By supporting eco farming honey and bee products, consumers contribute to practices that protect bee populations and their habitats, vital for pollination and biodiversity. These practices also ensure that the products are of the highest quality, free from contaminants common in non-sustainable environments, thus offering superior health benefits and supporting a more sustainable agriculture system globally.</p>
+        <h2 id="natural-fibers">Natural Fibers</h2>   
+        <p>Natural fibers are essential components of eco farming products, offering sustainable alternatives to synthetic materials and contributing to a more environmentally friendly approach to textiles and materials. These fibers are derived from plants such as cotton, hemp, flax (linen), bamboo, and jute, grown using eco-friendly farming practices that minimize chemical use and promote biodiversity.</p>
+        <br>
+        <p><b>Cotton,</b> when grown organically, is free from synthetic pesticides and fertilizers, making it safer for farmers, consumers, and the environment. Organic cotton cultivation also promotes soil health and water conservation, reducing the ecological footprint of textile production.</p>
+        <p><b>Hemp</b>is a versatile and sustainable fiber that requires minimal water and no pesticides to grow. It is known for its durability and strength, making it an excellent choice for eco-friendly textiles and materials.</p>
+        <p><b>Flax,</b>used to produce linen, is grown with natural fertilizers and typically requires less water than conventional cotton. Linen is biodegradable and has a lower environmental impact compared to synthetic fabrics.</p>
+        <p><b>Bamboo</b>fibers are derived from the fast-growing bamboo plant, which requires little water and no pesticides to thrive. Bamboo textiles are breathable, antimicrobial, and biodegradable, making them a popular choice for eco-conscious consumers.</p>
+        <p><b>Jute</b>is a natural fiber with a low environmental impact, as it can be grown without synthetic chemicals and is biodegradable. It is commonly used for packaging materials, rugs, and textiles.</p>
+    <div class="image">
+            <img src="Cotton.jpeg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="Flax.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="Bamboo.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="Jute.jpg" alt="Image Description" style="width: 400px; height: 200px;">
+        </div>
+        <br>
+        <p>Eco farming practices for natural fibers include crop rotation, organic fertilizers, and integrated pest management, reducing the reliance on synthetic inputs and minimizing harm to ecosystems. Choosing products made from these natural fibers supports sustainable agriculture and reduces the environmental footprint of textile production, contributing to a more eco-friendly and responsible consumption pattern.</p>
+        <h2 id="beauty-care-products">Natural Beauty and Personal Care Products</h2>
+        <p>Our eco farming products extend to encompass a comprehensive range of natural beauty and personal care items, meticulously crafted to harmonize wellness with environmental sustainability. In our skincare line, we feature ingredients like aloe vera, shea butter, and coconut oil, all cultivated through eco-friendly practices that eschew synthetic chemicals, thereby preserving their innate nourishing qualities while minimizing ecological impact. For hair care, we offer natural oils such as argan oil, jojoba oil, and olive oil, sourced sustainably to ensure optimal hair health without compromising the delicate balance of our ecosystems. Our body care selection boasts botanical extracts like chamomile, lavender, and calendula, meticulously grown without pesticides to deliver soothing and revitalizing benefits to your skin. In cosmetics, we harness the power of natural pigments, mineral powders, plant extracts, and beeswax, all free from synthetic additives, ensuring gentle yet effective formulations that are kind to your skin and the environment. Fragrances in our eco farming range are enriched with essential oils derived from plants like lavender, rose, and citrus fruits, harvested responsibly to retain their natural scents and therapeutic qualities. Through our commitment to organic cultivation, ethical sourcing, and eco-friendly packaging, our natural beauty and personal care products offer a holistic approach to self-care that resonates with values of environmental stewardship and personal well-being, inviting you to embrace a lifestyle that nourishes both yourself and the planet.</p>
+        <div class="image">
+            <img src="sc1.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="sc2.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="sc3.jpeg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="sc4.webp" alt="Image Description" style="width: 400px; height: 200px;">
+        </div>  
+        <br>
+        <p>Eco farming practices for beauty and personal care products prioritize organic cultivation, ethical sourcing, and eco-friendly packaging. By choosing these products, consumers support sustainable agriculture, reduce exposure to harmful chemicals, and contribute to a healthier planet. Eco farming beauty and personal care products offer a holistic approach to self-care, aligning with values of environmental stewardship and personal well-being.</p>
+        <br>
+        <div class="footer">
+        <p>© 2024 Eco Farming. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

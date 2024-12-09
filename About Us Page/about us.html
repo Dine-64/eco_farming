@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Farming</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9ade7d; /* Light earth tone background */
+            color: #333; /* Darker text for better readability */
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+
+        .search-container form {
+            display: flex;
+        }
+
+        .search-container input[type="text"] {
+            padding: 6px;
+            margin-right: 4px;
+            border: none;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button {
+            padding: 6px;
+            background: #4CAF50; /* Adjust to match your design */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button:hover {
+            background: #45a049;
+        }
+
+        /* Adjustments for existing .nav a styles might be needed */
+
+        
+        .searchbar form {
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 25px;
+            border: 4px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .searchbar input[type="search"] {
+            width: 0;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            transition: width 0.3s ease;
+        }
+
+        .searchbar button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+        }
+
+        .searchbar form:hover {
+            width: 300px;
+        }
+
+        .searchbar form:hover input[type="search"] {
+            width: calc(100% - 40px);
+        }
+
+        .fa-search {
+            color: #07051a;
+            font-size: 18px;
+        }
+        .header, .footer {
+            background-color: #169f34; /* Soft green, resembling crops */
+            background-image: url(pb.jpg);
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            color: #0d0101; /* White text for contrast */
+        }
+
+        .header h1{
+            font-size: 50px;
+            color: #011706;
+        }
+        .header p{
+            font-size: 20px;
+            color: #011706;
+        }
+        .nav {
+            background: #62d062; /* Deeper green, simulating foliage */
+            box-shadow: 0 5px 10px #727570;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #499a56; /* A lighter green for hover effect */
+            color: black;
+        }
+        .main {
+            padding: 20px;
+            color: #333; /* Ensure text is readable on the potential image background */
+            animation: fadeIn 2s ease-out;
+            /* Retain your existing .main styles */
+        }
+
+        .container2{
+          padding-left: 6%;
+            padding-right: 8%;
+            padding-top: 0;
+            padding-bottom: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+}
+
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .content {
+            width: 90%; /* Adjust based on preference */
+            max-width: 800px; /* Maximum width of the content */
+            margin: 20px auto; /* Centers the container */
+            padding: 20px;
+            background-color: rgb(219, 236, 204); /* Background color for content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better contrast */
+        }
+
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .container2 section {
+            flex: 1 1 200px; /* Grow, Shrink, Basis */
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .container2 section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .container2 section a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 15px;
+        }
+
+        .container2 img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #eee;
+            transition: transform 0.5s ease;
+            animation: pulse 5s infinite;
+        }
+
+        .container2 section:hover img {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+        }
+        /* Adjustments for hover effects to integrate with new animations */
+        .container2 section:hover img {
+            transform: scale(1.05) !important; /* Override pulse effect on hover */
+        }
+
+        /* Ensure existing styles are retained and integrated with new animations */
+        /* Add or modify existing styles here, ensuring they complement the animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .div1 h2{
+            margin-bottom: 0%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .search-bar {
+            float: left;
+            padding: 10px;
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */}
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>About Us</h1>
+        </div>
+        <div class="nav">
+            <!-- Search bar added at the beginning of the nav -->
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+        <a href="file:///D:/web/Home%20Page/home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="file:///D:/web/Product%20Page/product.html">Product</a></button>
+            <div class="dropdown-content">
+                <a href="file:///D:/web/Product%20Page/product.html#organic-fruits-vegetables">Organic Fruits and Vegetables</a>
+                <a href="file:///D:/web/Product%20Page/product.html#grains-legumes">Grains and Legumes</a>
+                <a href="file:///D:/web/Product%20Page/product.html#herbs-plants">Herbs and Medicinal Plants</a>
+                <a href="file:///D:/web/Product%20Page/product.html#honey-products">Honey and Bee Products</a>
+                <a href="file:///D:/web/Product%20Page/product.html#natural-fibers">Natural Fibers</a>
+                <a href="file:///D:/web/Product%20Page/product.html#beauty-care-products">Natural Beauty and Personal Care Products</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">About Us</button>
+            <div class="dropdown-content">
+                <a href="#our-mission">Our Mission</a>
+                <a href="#our-vision">Our Vision</a>
+                <a href="#commitment-agriculture">Commitment to Sustainable Agriculture for Eco Farming</a>
+                <a href="#join-us">Why Join Us in Making a Sustainable Future?</a>
+            </div>
+        </div>
+        <a href="file:///D:/web/Contact%20Page/contactpage.html">Contact Us</a>
+    </div>
+        
+        <div class="content">
+            <h2 id="our-mission">Our Mission</h2>
+            <p>
+                To revolutionize agriculture by embracing eco-farming practices, nurturing the Earth, and fostering resilient ecosystems. 
+                We aim to produce nutritious, sustainable food while promoting biodiversity, conserving water, and reducing environmental impact. 
+                Through education, community engagement, and innovation, we are committed to a future where farming works in harmony with nature, ensuring a healthy planet for generations to come.
+            </p>
+
+            <h2 id="our-vision">Our Vision</h2>
+            <p>
+                To be at the forefront of a global movement that transforms agriculture into a regenerative and sustainable force for good. 
+                We envision a world where eco-farming practices are universally adopted, creating a harmonious balance between human needs and the natural world. 
+                Our vision encompasses thriving ecosystems, vibrant communities, and abundant, healthy food systems that are accessible to all. 
+                By leading with innovation, integrity, and inclusivity, we aim to inspire a profound respect for the earth, sparking a paradigm shift towards environmental stewardship and sustainable living for a flourishing future.
+            </p>
+
+            <h2 id="commitment-agriculture">Commitment to Sustainable Agriculture for Eco Farming</h2>
+            <p>
+                At our eco farming initiative, we are deeply committed to practicing sustainable agriculture for the betterment of our environment, communities, and future generations. 
+                Our commitment encompasses several key principles.
+            </p><br>
+            <ol>
+                <li><B>Environmental Stewardship:</B> We pledge to protect and enhance the natural resources on our farm, including soil, water, and biodiversity. We prioritize regenerative practices that improve soil health, reduce erosion, conserve water, and promote wildlife habitat.</li>
+                <li><B>Organic and Chemical-Free:</B> We are dedicated to organic farming methods that exclude synthetic chemicals, pesticides, and genetically modified organisms (GMOs). Our goal is to produce healthy, nutritious food while minimizing harm to ecosystems and human health.</li>
+                <li><B>Climate Resilience:</B> Recognizing the challenges posed by climate change, we strive to build resilience in our farming practices. This includes adopting climate-smart techniques such as agroforestry, crop diversification, water management strategies, and carbon sequestration methods.</li>
+                <li><B>Biodiversity Conservation:</B> We value and protect biodiversity on our farm by preserving native species, creating habitat corridors, and promoting crop diversity. This approach enhances ecosystem resilience, pest management, and overall farm productivity.</li>
+                <li><B>Community Engagement:</B> We actively engage with our local community to promote sustainable agriculture education, support local food systems, and collaborate with other farmers and stakeholders. We believe in the importance of fostering a resilient and interconnected agricultural network.</li>
+                <li><B>Continuous Improvement:</B> We are committed to ongoing learning and improvement in our farming practices. We invest in research, innovation, and knowledge sharing to adapt to evolving environmental challenges and contribute positively to the agricultural sector.</li>
+            </ol>
+            <br>
+            <p>
+                We are committed to ongoing learning and improvement in our farming practices. We invest in research, innovation, and knowledge sharing to adapt to evolving environmental challenges and contribute positively to the agricultural sector.
+            </p>
+            <h2 id="join-us">Why Join Us in Making a Sustainable Future?</h2>
+            <p>Are you passionate about eco farming and the environment? Join us in creating a sustainable future for generations to come! Our eco farming initiative is dedicated to promoting environmentally friendly practices that benefit both people and the planet.</p><br>
+            <p>By joining our cause, you become part of a community that values sustainable agriculture, reduces environmental impact, and fosters biodiversity. Together, we can:</p>
+            <ol>
+                <li><b>Protect the Environment:</b>Eco farming minimizes the use of harmful chemicals and promotes natural pest control methods, preserving soil health and water quality.</li>
+                <li><b>Promote Healthy Living:</b>Our practices produce nutritious, organic food free from synthetic additives, promoting better health for consumers.</li>
+                <li><b>Support Local Communities:</b> Eco farming supports local economies, providing fair wages to farmers and contributing to vibrant rural communities.</li>
+                <li><b>Combat Climate Change:</b>Sustainable farming practices help reduce greenhouse gas emissions, mitigating the impact of climate change on our planet.</li>
+                <li><b>Preserve Biodiversity:</b>By protecting natural habitats and promoting crop diversity, we safeguard the rich biodiversity essential for a healthy ecosystem.</li>
+            </ol><br>
+            <p>Join us today and be a part of the solution towards a more sustainable and resilient future for all!</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Eco Farming. All rights reserved.</p>
+    </div>
+</body>
+</html>

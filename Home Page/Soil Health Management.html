@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Farming</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9ade7d; /* Light earth tone background */
+            background-image:url(shm2.webp);
+            background-size: cover;
+            color: #333; /* Darker text for better readability */
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+
+        .search-container form {
+            display: flex;
+        }
+
+        .search-container input[type="text"] {
+            padding: 6px;
+            margin-right: 4px;
+            border: none;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button {
+            padding: 6px;
+            background: #4CAF50; /* Adjust to match your design */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button:hover {
+            background: #45a049;
+        }
+
+        /* Adjustments for existing .nav a styles might be needed */
+
+        
+        .searchbar form {
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 25px;
+            border: 4px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .searchbar input[type="search"] {
+            width: 0;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            transition: width 0.3s ease;
+        }
+
+        .searchbar button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+        }
+
+        .searchbar form:hover {
+            width: 300px;
+        }
+
+        .searchbar form:hover input[type="search"] {
+            width: calc(100% - 40px);
+        }
+
+        .fa-search {
+            color: #07051a;
+            font-size: 18px;
+        }
+        .header, .footer {
+            background-color: #169f34; /* Soft green, resembling crops */
+            background-image: url(pb.jpg);
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            color: #0d0101; /* White text for contrast */
+        }
+
+        .header h1{
+            font-size: 50px;
+            color: #011706;
+        }
+        .header p{
+            font-size: 20px;
+            color: #011706;
+        }
+        .nav {
+            background: #62d062; /* Deeper green, simulating foliage */
+            box-shadow: 0 5px 10px #727570;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #499a56; /* A lighter green for hover effect */
+            color: black;
+        }
+        .main {
+            padding: 20px;
+            color: #333; /* Ensure text is readable on the potential image background */
+            animation: fadeIn 2s ease-out;
+            /* Retain your existing .main styles */
+        }
+        .container {
+            display: flex;
+            align-items: center; /* Vertically align items */
+        }
+
+        .image {
+            margin-left: 20px; /* Adjust margin as needed */
+        }
+
+        .text {
+            flex: 1; /* Take up remaining space */
+        }
+
+        .container2{
+          padding-left: 6%;
+            padding-right: 8%;
+            padding-top: 0;
+            padding-bottom: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+}
+
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .content {
+            width: 90%; /* Adjust based on preference */
+            max-width: 800px; /* Maximum width of the content */
+            margin: 20px auto; /* Centers the container */
+            padding: 20px;
+            background-color: rgb(219, 236, 204); /* Background color for content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better contrast */
+        }
+
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .container2 section {
+            flex: 1 1 200px; /* Grow, Shrink, Basis */
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .container2 section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .container2 section a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 15px;
+        }
+
+        .container2 img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #eee;
+            transition: transform 0.5s ease;
+            animation: pulse 5s infinite;
+        }
+
+        .container2 section:hover img {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+        }
+        /* Adjustments for hover effects to integrate with new animations */
+        .container2 section:hover img {
+            transform: scale(1.05) !important; /* Override pulse effect on hover */
+        }
+
+        /* Ensure existing styles are retained and integrated with new animations */
+        /* Add or modify existing styles here, ensuring they complement the animations */
+       
+        .div1 h2{
+            margin-bottom: 0%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .search-bar {
+            float: left;
+            padding: 10px;
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */}
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Soil Health Management</h1>
+        <p>sustainable soil for agriculture.</p>
+    </div>
+    <div class="nav">
+        <!-- Search bar added at the beginning of the nav -->
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+        <a href="file:///D:/web/Home%20Page/home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="file:///D:/web/Product%20Page/product.html">Product</a></button>
+            <div class="dropdown-content">
+                <a href="file:///D:/web/Product%20Page/product.html#organic-fruits-vegetables">Organic Fruits and Vegetables</a>
+                <a href="file:///D:/web/Product%20Page/product.html#grains-legumes">Grains and Legumes</a>
+                <a href="file:///D:/web/Product%20Page/product.html#herbs-plants">Herbs and Medicinal Plants</a>
+                <a href="file:///D:/web/Product%20Page/product.html#honey-products">Honey and Bee Products</a>
+                <a href="file:///D:/web/Product%20Page/product.html#natural-fibers">Natural Fibers</a>
+                <a href="file:///D:/web/Product%20Page/product.html#beauty-care-products">Natural Beauty and Personal Care Products</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn"><a href="file:///D:/web/About%20Us%20Page/about%20us.html">About Us</a></button>
+            <div class="dropdown-content">
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#our-mission">Our Mission</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#our-vision">Our Vision</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#commitment-agriculture">Commitment to Sustainable Agriculture for Eco Farming</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#join-us">Why Join Us in Making a Sustainable Future?</a>
+            </div>
+        </div>
+        <a href="file:///D:/web/Contact%20Page/contactpage.html">Contact Us</a>
+    </div>
+    <div class="main">
+        <h2>Soil Health Management System</h2>
+        <p>Soil health management systems are <b>agricultural systems that prioritize the health of soils, by reducing soil disturbance and keeping living roots in the ground.</b> Healthy soils should protect soil carbon and nutrients, capture and store water, and promote soil organisms.</p>
+        <div class="text">   
+            <h2>What do you mean by soil management?</h2>
+            <p>Soil management practices can be classified as <b>those affecting tillage, placement, and incorporation of residue and nutrients.</b> It is important to understand that changes in soil management practices affect soil water balance, temperature, biological activity, and gas exchange between the soil and the atmosphere.</p>
+        </div>
+        <div class="image">
+            <img src="shm-o.jpg" alt="Image Description" style="width: 400px; height: 300px; margin-right: 80px;">
+            <img src="shm-o1.png" alt="Image Description" style="width: 400px; height: 300px; margin-right: 80px;">
+            <img src="shm-o2.jpeg" alt="Image Description" style="width: 400px; height: 300px;">
+        </div>
+        
+        <h2>Importance of Soil Health</h2>
+        <p>Soil is the powerhouse behind every slurp of sweet, juicy summer fruit or crunch of nutritious, nutty seeds. Soil is the sustaining factor for life on earth. The upper crust of the Earth is full of organisms, liquids, and mineral particles that plants need to grow and thrive. Plants rely on the soil for everything from disease resistance to winter hardiness to fruit quality and flavor. Over a quarter of Earth’s biodiversity lives in soil. 
+
+            Everyone who eats benefits from the quality of soil. 95% of food production is soil-based! As the population grows, there are more mouths to feed, straining soil as a natural resource. Even today, over 2 billion people experience micronutrient deficiencies in their diet, which impact factors of human health ranging from brain and muscle function to fetal development and immune system health.
+            
+            Soil has been declared finite by the United Nations, which predicts catastrophic soil loss within 60 years. Worldwide, soil degradation could cost $23 million by 2050 due to the loss of food, ecosystem services, and income. Soil health in agriculture is critical, with near-term impacts likely. Taking steps toward understanding, assessing, and improving soil health is critical for the future of food, agriculture, and life. 
+            
+            Digging into soil health 
+            Healthy soils are the foundation of a healthy life. Soil health refers to the ability of soil, as a living system, to sustain biological productivity, animal and plant health, and environmental quality. Maintaining soil health requires conservation and intentional management of soil health principles. It’s worth it, though. Life, dependent on soil, cannot thrive in unhealthy soils – creating major downstream impacts on human, animal, and plant health. 
+            
+            Healthy soil performs five functions that enable clean air and water and healthy plants and organisms. Those five functions are regulating water, sustaining plant and animal life, filtering and buffering potential pollutants, cycling nutrients, and providing physical stability and support. 
+            
+            Soil health is important in agriculture due to the dependency on soil for the majority of food production. Healthy soils are the foundation for high yields, high-quality crops, and long-term cropping potential. Healthy soils also have the capability to sustain the environment. Soil contains more than three times the amount of carbon in the earth’s atmosphere – and unhealthy soils release that carbon, contributing to greenhouse gas emissions. </p>
+            <h2>Key Principles of Soil Management</h2>
+<p>Soil health management is essential for sustainable agriculture, environmental sustainability, and ensuring food security. Healthy soil supports plant growth by providing essential nutrients, water, and a structure that supports roots and maintains air and water balance. Here are some key practices and principles involved in managing soil health:</p>
+<ol>
+    <li>
+        <strong>Organic Matter Addition:</strong>
+        <p>Adding organic matter, such as compost, manure, or crop residues, is crucial for improving soil structure, enhancing nutrient cycling, increasing water retention, and stimulating the activity of beneficial soil organisms.</p>
+    </li>
+    <li>
+        <strong>Cover Cropping:</strong>
+        <p>Growing cover crops like legumes, grasses, or brassicas between regular crop cycles can help prevent soil erosion, suppress weeds, improve soil fertility, and promote biodiversity. They also fix atmospheric nitrogen into the soil, reducing the need for chemical fertilizers.</p>
+    </li>
+    <li>
+        <strong>Crop Rotation:</strong>
+        <p>Rotating different types of crops over several seasons can reduce the risk of pest and disease buildup, improve soil structure, and optimize nutrients' availability. This diversity also supports a wider range of soil organisms, which can enhance soil resilience.</p>
+    </li>
+    <li>
+        <strong>Reduced Tillage:</strong>
+        <p>Minimizing tillage helps preserve soil structure, reduce erosion, and maintain organic matter levels. No-till or reduced-till farming techniques can significantly enhance water retention, nutrient cycling, and carbon sequestration in the soil.</p>
+    </li>
+    <li>
+        <strong>Integrated Nutrient Management:</strong>
+        <p>Balancing the use of chemical fertilizers with organic sources ensures that plants receive nutrients at optimal levels without causing harm to the soil's natural composition. Precision agriculture techniques can help in applying nutrients where and when they are needed most, minimizing waste and environmental impact.</p>
+    </li>
+    <li>
+        <strong>Pest Management:</strong>
+        <p>Integrated Pest Management (IPM) approaches that use biological, cultural, and mechanical methods can control pests without excessive reliance on chemical pesticides. This helps maintain soil health by preserving beneficial organisms that contribute to nutrient cycling and disease suppression.</p>
+    </li>
+    <li>
+        <strong>Water Management:</strong>
+        <p>Efficient irrigation systems and practices that prevent overwatering and waterlogging can protect soil structure and chemistry. Techniques such as drip irrigation or scheduled watering based on actual crop need can optimize water use and prevent soil degradation.</p>
+    </li>
+    <li>
+        <strong>Monitoring and Testing:</strong>
+        <p>Regular soil testing can provide critical information about its health, including pH, nutrient content, organic matter levels, and contaminant presence. This data helps guide effective management decisions and preventive measures.</p>
+    </li>
+    <li>
+        <strong>Conservation Practices:</strong>
+        <p>Employing conservation practices like buffer strips, terracing, and contour farming can help prevent erosion and protect water quality. These practices are particularly important on sloped lands where runoff and soil loss could be significant.</p>
+    </li>
+    <li>
+        <strong>Enhancing Biodiversity:</strong>
+        <p>Encouraging biodiversity within the soil ecosystem by maintaining a variety of plant species and habitats promotes a robust and resilient soil system. This can be achieved through practices such as intercropping and maintaining natural vegetation around fields.</p>
+    </li>
+</ol>
+    <br>
+    <p>Implementing these practices requires a combination of knowledge, planning, and sometimes investment, but the long-term benefits of maintaining healthy soil are significant. These include higher crop yields, reduced impact of droughts and floods, lower carbon footprint, and overall greater environmental sustainability.</p>
+
+        </div>
+
+
+
+
+    <div class="footer">
+        <p>© 2024 Eco Farming. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

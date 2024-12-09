@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9ade7d; /* Light earth tone background */
+            background-image: url(cu3.jpg);
+            background-size: cover;
+            color: #333; /* Darker text for better readability */
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+
+        .search-container form {
+            display: flex;
+        }
+
+        .search-container input[type="text"] {
+            padding: 6px;
+            margin-right: 4px;
+            border: none;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button {
+            padding: 6px;
+            background: #4CAF50; /* Adjust to match your design */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button:hover {
+            background: #45a049;
+        }
+
+        .header, .footer {
+            background-color: #169f34; /* Soft green, resembling crops */
+            background-image: url(pb.jpg);
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            color: #0d0101; /* White text for contrast */
+        }
+
+        .header h1{
+            font-size: 50px;
+            color: #011706;
+        }
+        .header p{
+            font-size: 20px;
+            color: #011706;
+        }
+        .nav {
+            background: #62d062; /* Deeper green, simulating foliage */
+            box-shadow: 0 5px 10px #727570;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #499a56; /* A lighter green for hover effect */
+            color: black;
+        }
+        .main {
+            padding: 20px;
+            color: #333; /* Ensure text is readable on the potential image background */
+            animation: fadeIn 2s ease-out;
+            /* Retain your existing .main styles */
+        }
+
+        .container2{
+          padding-left: 6%;
+            padding-right: 8%;
+            padding-top: 0;
+            padding-bottom: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .content {
+            width: 90%; /* Adjust based on preference */
+            max-width: 800px; /* Maximum width of the content */
+            margin: 20px auto; /* Centers the container */
+            padding: 20px;
+            background-color: rgb(171, 240, 197); /* Background color for content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better contrast */
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container input[type="text"],
+        .form-container textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Adjustments for hover effects to integrate with new animations */
+        .container2 section:hover img {
+            transform: scale(1.05) !important; /* Override pulse effect on hover */
+        }
+
+        /* Ensure existing styles are retained and integrated with new animations */
+        /* Add or modify existing styles here, ensuring they complement the animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="nav">
+            <!-- Search bar added at the beginning of the nav -->
+            <div class="search-container">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            <a href="file:///D:/web/Home%20Page/home.html">Home</a>
+            <a href="file:///D:/web/Product%20Page/product.html">Product</a>
+            <a href="file:///D:/web/About%20Us%20Page/about%20us.html">About Us</a>
+            <a href="#contact-us">Contact Us</a>
+        </div>
+        
+        <div class="content">
+            <div class="form-container">
+                <form action="/submit_form" method="post">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Your email.." required>
+
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+                <p>&#9742; +94 768849390</p>
+                <p>&#9993; info@ecofarming.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Eco Farming. All rights reserved.</p>
+    </div>
+</body>
+</html>

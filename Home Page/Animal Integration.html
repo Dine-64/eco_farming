@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Farming</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9ade7d; /* Light earth tone background */
+            background-image:url(aniw.webp);
+            background-size: cover;
+            color: #333; /* Darker text for better readability */
+        } 
+        .nav {
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+
+        .search-container form {
+            display: flex;
+        }
+
+        .search-container input[type="text"] {
+            padding: 6px;
+            margin-right: 4px;
+            border: none;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button {
+            padding: 6px;
+            background: #4CAF50; /* Adjust to match your design */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px; /* Optional: rounds the corners */
+        }
+
+        .search-container button:hover {
+            background: #45a049;
+        }
+
+        /* Adjustments for existing .nav a styles might be needed */
+
+        
+        .searchbar form {
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 25px;
+            border: 4px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .searchbar input[type="search"] {
+            width: 0;
+            height: 100%;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            transition: width 0.3s ease;
+        }
+
+        .searchbar button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+        }
+
+        .searchbar form:hover {
+            width: 300px;
+        }
+
+        .searchbar form:hover input[type="search"] {
+            width: calc(100% - 40px);
+        }
+
+        .fa-search {
+            color: #07051a;
+            font-size: 18px;
+        }
+        .header, .footer {
+            background-color: #169f34; /* Soft green, resembling crops */
+            background-image: url(pb.jpg);
+            background-size: cover;
+            padding: 20px;
+            text-align: center;
+            color: #0d0101; /* White text for contrast */
+        }
+
+        .header h1{
+            font-size: 50px;
+            color: #011706;
+        }
+        .header p{
+            font-size: 20px;
+            color: #011706;
+        }
+        .nav {
+            background: #62d062; /* Deeper green, simulating foliage */
+            box-shadow: 0 5px 10px #727570;
+            overflow: hidden;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #499a56; /* A lighter green for hover effect */
+            color: black;
+        }
+        .main {
+            padding: 20px;
+            color: #333; /* Ensure text is readable on the potential image background */
+            animation: fadeIn 2s ease-out;
+            /* Retain your existing .main styles */
+        }
+        .container {
+            display: flex;
+            align-items: center; /* Vertically align items */
+        }
+
+        .image {
+            margin-left: 20px; /* Adjust margin as needed */
+        }
+
+        .text {
+            flex: 1; /* Take up remaining space */
+        }
+
+        .container2{
+          padding-left: 6%;
+            padding-right: 8%;
+            padding-top: 0;
+            padding-bottom: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+}
+
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .content {
+            width: 90%; /* Adjust based on preference */
+            max-width: 800px; /* Maximum width of the content */
+            margin: 20px auto; /* Centers the container */
+            padding: 20px;
+            background-color: rgb(219, 236, 204); /* Background color for content */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better contrast */
+        }
+
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .container2 section {
+            flex: 1 1 200px; /* Grow, Shrink, Basis */
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .container2 section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .container2 section a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 15px;
+        }
+
+        .container2 img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #eee;
+            transition: transform 0.5s ease;
+            animation: pulse 5s infinite;
+        }
+
+        .container2 section:hover img {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+        }
+        /* Adjustments for hover effects to integrate with new animations */
+        .container2 section:hover img {
+            transform: scale(1.05) !important; /* Override pulse effect on hover */
+        }
+
+        /* Ensure existing styles are retained and integrated with new animations */
+        /* Add or modify existing styles here, ensuring they complement the animations */
+       
+        .div1 h2{
+            margin-bottom: 0%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: #62d062; /* Or your existing background */
+            padding: 0 20px; /* Adjust based on your design */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .search-bar {
+            float: left;
+            padding: 10px;
+            margin-right: auto; /* Pushes everything else to the right */
+        }
+        .search-container {
+            margin-right: auto; /* Pushes everything else to the right */}
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Animal Integration</h1>
+        <p>Animal-Inclusive Agriculture</p>
+    </div>
+    <div class="nav">
+        <!-- Search bar added at the beginning of the nav -->
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+        <a href="file:///D:/web/Home%20Page/home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="file:///D:/web/Product%20Page/product.html">Product</a></button>
+            <div class="dropdown-content">
+                <a href="file:///D:/web/Product%20Page/product.html#organic-fruits-vegetables">Organic Fruits and Vegetables</a>
+                <a href="file:///D:/web/Product%20Page/product.html#grains-legumes">Grains and Legumes</a>
+                <a href="file:///D:/web/Product%20Page/product.html#herbs-plants">Herbs and Medicinal Plants</a>
+                <a href="file:///D:/web/Product%20Page/product.html#honey-products">Honey and Bee Products</a>
+                <a href="file:///D:/web/Product%20Page/product.html#natural-fibers">Natural Fibers</a>
+                <a href="file:///D:/web/Product%20Page/product.html#beauty-care-products">Natural Beauty and Personal Care Products</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn"><a href="file:///D:/web/About%20Us%20Page/about%20us.html">About Us</a></button>
+            <div class="dropdown-content">
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#our-mission">Our Mission</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#our-vision">Our Vision</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#commitment-agriculture">Commitment to Sustainable Agriculture for Eco Farming</a>
+                <a href="file:///D:/web/About%20Us%20Page/about%20us.html#join-us">Why Join Us in Making a Sustainable Future?</a>
+            </div>
+        </div>
+        <a href="file:///D:/web/Contact%20Page/contactpage.html">Contact Us</a>
+    </div>
+    <div class="main">
+        <p>Animal integration refers to the practice of incorporating animals into various aspects of human activities, especially in agriculture, sustainability initiatives, and ecosystem management.Integrate animals into farms as a regenerative agriculture practice to improve soil health, sequester carbon dioxide, and reduce industrialized meat and dairy production. For centuries, the cultivation of crops was partnered with raising animals, generating food, income, clothing, and sources of power for farmers.</p>
+        <br>
+        <h2>Key Aspects and Benefits of Animal Integration</h2>
+        <ol>
+            <li><b><h3>Agriculture and Farming</b></h3></li><ul><li><b>Livestock Grazing:</b>Integrating livestock such as cows, sheep, or goats into agricultural fields for grazing can help manage vegetation, improve soil fertility, and reduce the need for mechanical interventions.</li></ul>
+            <ul><li><b>Animal Manure:</b>Animal waste, when properly managed, serves as valuable organic fertilizer, enhancing soil health and nutrient cycling in farming systems.</li></ul>
+            <ul><li><b>Integrated Pest Management:</b>Certain animals like chickens or ducks can be used in pest control by consuming insects and pests, reducing the reliance on chemical pesticides.</li></ul>
+            <br>
+            <li><b><h3>Permaculture and Agroecology</h3></b></li><ul><li><b>Polyculture Systems:</b>Integrating animals into polyculture systems, where diverse crops and animals coexist, promotes biodiversity, resilience, and sustainability in food production.</li></ul>
+            <ul><li><b>Holistic Management:</b>Practices like rotational grazing, where animals are moved through different pastures, mimic natural grazing patterns and improve soil health while supporting animal welfare.</li></ul>
+            <br>
+            <li><b><h3>Sustainable Land Management</h3></b></li><ul><li><b>Erosion Control:</b>Animals like grazing animals or land-based birds can help manage vegetation and control erosion in sensitive areas, preventing soil degradation.</li></ul>
+            <ul><li><b>Biodiversity Enhancement:</b>Integrating animals into ecosystems contributes to biodiversity conservation by maintaining habitat diversity and supporting wildlife corridors.</li></ul>
+            <br>
+            <li><b><h3>Regenerative Agriculture</h3></b></li><ul><li><b>Carbon Sequestration:</b>Properly managed grazing systems can enhance carbon sequestration in soils, contributing to climate change mitigation efforts.</li></ul>
+            <ul><li><b>Water Management:</b>Animal integration practices can improve water infiltration, reduce runoff, and enhance water retention in soils, supporting water management in agricultural landscapes.</li></ul>
+        </ol>
+        <br>
+        <div class="image">
+            <img src="ani7.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="ani3.png" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="ani4.jpg" alt="Image Description" style="width: 300px; height: 200px; margin-right: 40px;">
+            <img src="ani6.jpg" alt="Image Description" style="width: 400px; height: 200px;">
+        </div>
+        <h2>Benefits of Animal Integration</h2>
+        <ol>
+            <li><b>Resource Efficiency:</b>Utilizing animals in farming and land management reduces the need for external inputs like synthetic fertilizers, herbicides, and pesticides, leading to cost savings and resource conservation.</li>
+            <li><b>Nutrient Cycling:</b>Animals play a crucial role in nutrient cycling by converting organic matter into valuable nutrients for plants, improving soil fertility and productivity.</li>
+            <li><b>Ecosystem Services:</b>Integrating animals supports ecosystem services such as pollination, pest control, soil aeration, and biodiversity conservation.</li>
+            <li><b>Holistic Approach:</b>Animal integration promotes a holistic approach to agriculture and land management, considering ecological, social, and economic aspects for sustainable practices.</li>
+        </ol>
+        <br>
+        <p>By integrating animals thoughtfully and responsibly into human activities, we can enhance ecosystem resilience, promote sustainable agriculture, and contribute to overall environmental health and well-being.</p>
+    <div class="footer">
+        <p>© 2024 Eco Farming. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
